@@ -23,7 +23,6 @@ const { Readable, Writable, Duplex } = require("stream");
 
 const fs = require('fs');
 const http = require('http');
-const { RSA_NO_PADDING } = require("constants");
 
 const server = http.createServer();
 server.on('request', (req, res) => {
@@ -50,7 +49,6 @@ server.on('request', (req, res) => {
         console.log(err);
         res.end("File Not Found");
     });
-
 });
 
 server.listen(8000, "127.0.0.1", () => {
